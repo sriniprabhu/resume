@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Srinivas Prabhu — Resume (Sidebar)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap"
+          rel="stylesheet"/>
+
+    <style>
+        :root {
+            --side: #111827;
+            --side-sub: #1f2937;
+            --accent: #2dd4bf;
+            --accent-dk: #0d9488;
+            --text: #111827;
+            --body: #374151;
+            --muted: #6b7280;
+            --rule: #e5e7eb;
+            --pill-bg: #f3f4f6;
+            --pill-bd: #e5e7eb;
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-head: 'Sora', var(--font);
+            --page: 980px;
+            --side-w: 265px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        a { color: inherit; text-decoration: none; }
+
+        body {
+            font-family: var(--font);
+            font-size: 12.5px;
+            line-height: 1.55;
+            color: var(--body);
+            background: #dde3e2;
+            padding: 2.5rem 1rem;
+        }
+
+        .page {
+            max-width: var(--page);
+            margin: 0 auto;
+            display: flex;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 2px rgba(17,24,39,0.06), 0 20px 48px rgba(17,24,39,0.20);
+        }
+
+        /* ══════════════════════════════════════════
+           SIDEBAR
+        ══════════════════════════════════════════ */
+        .side {
+            width: var(--side-w);
+            flex-shrink: 0;
+            background: linear-gradient(180deg, var(--side) 0%, var(--side-sub) 100%);
+            color: #cbd5e1;
+            padding: 2.1rem 1.5rem;
+        }
+
+        .avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-head);
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--side);
+            background: linear-gradient(135deg, var(--accent) 0%, #99f6e4 100%);
+            box-shadow: 0 6px 18px rgba(45,212,191,0.35);
+            margin-bottom: 14px;
+        }
+
+        .s-name {
+            font-family: var(--font-head);
+            font-size: 22px;
+            font-weight: 800;
+            color: #f8fafc;
+            line-height: 1.15;
+            margin-bottom: 4px;
+        }
+
+        .s-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .s-exp {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            color: #94a3b8;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 2px 9px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .s-block { margin-bottom: 22px; }
+        .s-block:last-child { margin-bottom: 0; }
+
+        .s-label {
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 9px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .s-ci {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 11px;
+            color: #cbd5e1;
+            margin-bottom: 9px;
+            word-break: break-word;
+        }
+        .s-ci:last-child { margin-bottom: 0; }
+
+        .s-ci svg {
+            width: 12px; height: 12px;
+            fill: none;
+            stroke: var(--accent);
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .s-ci a { color: #cbd5e1; }
+
+        .s-visa {
+            display: inline-block;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            background: rgba(45,212,191,0.15);
+            color: var(--accent);
+            border: 1px solid rgba(45,212,191,0.3);
+            padding: 3px 9px;
+            border-radius: 20px;
+        }
+
+        .s-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+
+        .s-pill {
+            font-size: 10px;
+            font-weight: 500;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: #e2e8f0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            line-height: 1.3;
+        }
+
+        .s-sub-label {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin: 10px 0 5px;
+        }
+        .s-sub-label:first-child { margin-top: 0; }
+
+        .s-edu-school { font-size: 12px; font-weight: 700; color: #f8fafc; }
+        .s-edu-deg { font-size: 10.5px; color: #94a3b8; margin-top: 1px; }
+        .s-edu-dates { font-size: 10px; color: var(--accent); margin-top: 3px; font-weight: 600; }
+
+        /* ══════════════════════════════════════════
+           MAIN COLUMN
+        ══════════════════════════════════════════ */
+        .main { flex: 1; min-width: 0; padding: 2.1rem 2.3rem; }
+
+        .section { margin-bottom: 1.5rem; }
+        .section:last-child { margin-bottom: 0; }
+
+        .m-h {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent-dk);
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--rule);
+        }
+
+        .summary {
+            font-size: 13px;
+            line-height: 1.72;
+            color: var(--body);
+        }
+
+        .job { margin-bottom: 1.2rem; }
+        .job:last-child { margin-bottom: 0; }
+
+        .job-hdr { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 1px; }
+
+        .co { font-size: 15px; font-weight: 700; color: var(--text); }
+
+        .co-note { font-size: 11.5px; font-weight: 400; color: var(--muted); margin-left: 4px; }
+
+        .dates {
+            font-size: 10.5px;
+            font-weight: 600;
+            color: var(--accent-dk);
+            white-space: nowrap;
+            flex-shrink: 0;
+            font-feature-settings: 'tnum';
+        }
+
+        .role-line { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+
+        .role { font-size: 12.5px; font-weight: 600; color: var(--muted); }
+
+        .role-path { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+
+        .rp-step { font-size: 11.5px; font-weight: 500; color: var(--muted); }
+        .rp-arrow { font-size: 11px; color: var(--rule); }
+        .rp-step.rp-current { font-size: 12.5px; font-weight: 700; color: var(--accent-dk); }
+
+        .loc { font-size: 11.5px; color: var(--muted); }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            background: #f0fdfa;
+            color: var(--accent-dk);
+            border: 1px solid #99f6e4;
+            padding: 1px 8px;
+            border-radius: 20px;
+        }
+
+        .job > p {
+            font-size: 12.5px;
+            line-height: 1.68;
+            color: #4b5563;
+            background: #f9fafb;
+            border-left: 3px solid rgba(13,148,136,0.35);
+            border-radius: 0 5px 5px 0;
+            padding: 7px 11px;
+            margin: 4px 0 9px;
+        }
+
+        ul.b { list-style: none; }
+
+        ul.b li {
+            position: relative;
+            padding-left: 15px;
+            font-size: 12.5px;
+            line-height: 1.65;
+            color: var(--body);
+            margin-bottom: 3px;
+        }
+
+        ul.b li::before {
+            content: '';
+            position: absolute;
+            left: 3px; top: 7.5px;
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: var(--accent-dk);
+            opacity: 0.6;
+        }
+
+        ul.b li strong { color: var(--text); font-weight: 700; }
+
+        @media print {
+            body { background: #fff; padding: 0; }
+            .page { max-width: 100%; box-shadow: none; border-radius: 0; }
+
+            .side, .avatar, .badge, .s-visa {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .job { break-inside: avoid; }
+
+            @page { size: Letter; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- ═══════════════ SIDEBAR ═══════════════ -->
+    <div class="side">
+        <div class="avatar">SP</div>
+        <p class="s-name">Srinivas Prabhu</p>
+        <p class="s-title">Engineering Lead &amp; Manager</p>
+        <span class="s-exp">15+ Years Experience</span>
+
+        <div class="s-block">
+            <p class="s-label">Contact</p>
+            <div class="s-ci">
+                <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+                <a href="mailto:srinivas2584@gmail.com">srinivas2584@gmail.com</a>
+            </div>
+            <div class="s-ci">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                917-435-2107
+            </div>
+            <div class="s-ci">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Georgetown, TX
+            </div>
+            <div class="s-ci">
+                <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <a href="https://linkedin.com/in/srinivas-prabhu-80689945" target="_blank">linkedin.com/in/srinivas-prabhu</a>
+            </div>
+            <div class="s-ci">
+                <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                <a href="https://github.com/sriniprabhu" target="_blank">github.com/sriniprabhu</a>
+            </div>
+            <div class="s-ci">
+                <span class="s-visa">H1B · I-140 Approved</span>
+            </div>
+        </div>
+
+        <div class="s-block">
+            <p class="s-label">Skills</p>
+
+            <p class="s-sub-label">Languages</p>
+            <div class="s-pills">
+                <span class="s-pill">Java</span><span class="s-pill">Kotlin</span><span class="s-pill">TypeScript</span>
+                <span class="s-pill">Python</span><span class="s-pill">Scala</span><span class="s-pill">Ruby</span>
+                <span class="s-pill">Go</span><span class="s-pill">C#</span>
+            </div>
+
+            <p class="s-sub-label">Cloud &amp; Infra</p>
+            <div class="s-pills">
+                <span class="s-pill">AWS</span><span class="s-pill">ECS/Fargate</span><span class="s-pill">Kinesis</span>
+                <span class="s-pill">Lambda</span><span class="s-pill">DynamoDB</span><span class="s-pill">Terraform</span>
+                <span class="s-pill">CloudFront</span><span class="s-pill">EventBridge</span><span class="s-pill">Route 53</span>
+                <span class="s-pill">RDS</span><span class="s-pill">S3</span><span class="s-pill">Docker</span><span class="s-pill">IAM</span>
+            </div>
+
+            <p class="s-sub-label">Frameworks</p>
+            <div class="s-pills">
+                <span class="s-pill">Spring Boot</span><span class="s-pill">NestJS</span><span class="s-pill">React/Next.js</span>
+                <span class="s-pill">Node.js</span><span class="s-pill">Rails</span><span class="s-pill">PostGraphile</span>
+                <span class="s-pill">Shopify API</span>
+            </div>
+
+            <p class="s-sub-label">Data &amp; AI/ML</p>
+            <div class="s-pills">
+                <span class="s-pill">Snowflake</span><span class="s-pill">Airflow</span><span class="s-pill">LangChain</span>
+                <span class="s-pill">PostgreSQL</span><span class="s-pill">Redshift</span><span class="s-pill">Redis</span>
+                <span class="s-pill">Apache Avro</span><span class="s-pill">LangSmith</span><span class="s-pill">GPT-4/Gemini</span>
+            </div>
+
+            <p class="s-sub-label">CI/CD &amp; Observability</p>
+            <div class="s-pills">
+                <span class="s-pill">GitHub Actions</span><span class="s-pill">Datadog APM</span><span class="s-pill">TeamCity</span>
+                <span class="s-pill">Harness CD</span><span class="s-pill">CodeDeploy</span><span class="s-pill">PagerDuty</span>
+                <span class="s-pill">New Relic</span>
+            </div>
+        </div>
+
+        <div class="s-block">
+            <p class="s-label">Education</p>
+            <p class="s-edu-school">SJCE Mysore</p>
+            <p class="s-edu-deg">Bachelor of Engineering</p>
+            <p class="s-edu-dates">2002 – 2006</p>
+        </div>
+    </div>
+
+    <!-- ═══════════════ MAIN COLUMN ═══════════════ -->
+    <div class="main">
+
+        <section class="section">
+            <p class="m-h">Summary</p>
+            <p class="summary">
+                Engineering leader with 15+ years of experience architecting and delivering large-scale distributed
+                systems across AdTech, AI/ML, and e-commerce. Specialized in backend platforms, real-time event
+                processing, cloud-native AWS infrastructure, and AI-driven products. Proven track record of building
+                mission-critical systems from the ground up, leading engineering teams, driving architecture decisions,
+                and establishing scalable engineering practices across CI/CD, observability, and operational excellence.
+            </p>
+        </section>
+
+        <section class="section">
+            <p class="m-h">Experience</p>
+
+            <div class="job">
+                <div class="job-hdr">
+                    <span class="co">Black Crow AI</span>
+                    <span class="dates">Dec 2020 – Present</span>
+                </div>
+                <div class="role-line">
+                    <span class="role">Staff Software Engineer</span>
+                    <span class="loc">· Georgetown, TX (Remote)</span>
+                    <span class="badge">Founding Team</span>
+                </div>
+                <p>
+                    Founding engineer responsible for architecting and scaling Black Crow AI's no-code ML platform
+                    from inception to <strong>225+ enterprise e-commerce brands</strong>. Owned end-to-end platform
+                    architecture, ML infrastructure, reliability, and engineering execution while leading a team of
+                    <strong>5 engineers</strong>.
+                </p>
+                <ul class="b">
+                    <li>Architected the core event-driven platform powering real-time ML predictions and customer identity resolution using AWS ECS, Kinesis, DynamoDB, and Spring Boot.</li>
+                    <li>Led migration from EC2 to ECS Fargate with blue-green deployments, automated scaling, and <strong>improved production reliability with zero deployment downtime</strong>.</li>
+                    <li>Designed multi-tenant configuration and onboarding platforms using Java, Kotlin, PostgreSQL, and EventBridge, standardizing enterprise customer deployments.</li>
+                    <li>Built ML data pipelines for repurchase prediction using Airflow, Snowflake, ECS, and Kinesis, supporting personalization solutions across <strong>50+ retail brands</strong>.</li>
+                    <li>Delivered AI-powered CRO capabilities using NestJS, Next.js, TypeScript, PostgreSQL, Redis, GPT-4, and Gemini.</li>
+                    <li>Established engineering foundations across Terraform, GitHub Actions, TeamCity, Datadog APM, and PagerDuty, improving deployment velocity and operational excellence.</li>
+                    <li>Led architecture and delivery while managing and mentoring <strong>5 engineers</strong>, partnering cross-functionally with Product, ML, and Customer Success teams.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-hdr">
+                    <span class="co">Intent Media</span>
+                    <span class="dates">Nov 2015 – Nov 2020</span>
+                </div>
+                <div class="role-line">
+                    <span class="role-path">
+                        <span class="rp-step">Software Engineer</span>
+                        <span class="rp-arrow">→</span>
+                        <span class="rp-step">Senior Software Engineer</span>
+                        <span class="rp-arrow">→</span>
+                        <span class="rp-step rp-current">Engineering Manager</span>
+                    </span>
+                    <span class="loc">· New York, NY</span>
+                </div>
+                <ul class="b">
+                    <li>Progressed from Software Engineer to Engineering Manager, leading development of large-scale AdTech platforms powering programmatic advertising for <strong>Expedia, Hotels.com, TripAdvisor, and 10+ travel publishers</strong>.</li>
+                    <li>Built and scaled Java-based ad auction systems with multi-stage bidding pipelines, audience scoring, bid optimization, and production observability using Spring Boot and Datadog APM.</li>
+                    <li>Designed and delivered prediction microservices using Spring Boot, OpenAPI, ECS Fargate, Terraform, and Harness CD, <strong>enabling automated deployments with canary releases and rollback capabilities</strong>.</li>
+                    <li>Led cloud modernization initiatives including monolith decomposition, microservice adoption, and AWS infrastructure automation across IAM, VPC, Route 53, and multi-region environments.</li>
+                    <li>Improved production reliability through structured monitoring, alerting, and operational practices, reducing incident resolution time.</li>
+                    <li>Managed and mentored a team of <strong>4 engineers</strong>, driving technical execution and delivery across multiple product initiatives.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-hdr">
+                    <span class="co">ThoughtWorks</span>
+                    <span class="dates">Apr 2012 – Oct 2015</span>
+                </div>
+                <div class="role-line">
+                    <span class="role">Senior Consultant</span>
+                    <span class="loc">· Bangalore / London</span>
+                </div>
+                <ul class="b">
+                    <li>Built online ticketing and reservation platform for UK train operators; developed pricing analytics tool for a major US consulting firm enabling data-driven revenue decisions.</li>
+                    <li>Embedded with client teams to define CI/CD, test automation, and Agile delivery from scratch; mentored new consultants and client engineers in software craft.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-hdr">
+                    <span class="co">Sungard Technologies</span>
+                    <span class="dates">Dec 2008 – Apr 2012</span>
+                </div>
+                <div class="role-line">
+                    <span class="role">Senior Engineer</span>
+                    <span class="loc">· Bangalore</span>
+                </div>
+                <ul class="b">
+                    <li>Built in-house automation framework for multiple Sungard products with a custom test execution UI and reporting layer.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-hdr">
+                    <span class="co">Interwoven</span>
+                    <span class="dates">Sep 2006 – Dec 2008</span>
+                </div>
+                <div class="role-line">
+                    <span class="role">Software Engineer</span>
+                    <span class="loc">· Bangalore</span>
+                </div>
+                <ul class="b">
+                    <li>Developed regression/integration test suites; designed VM templates for reproducible environments; built performance test scripts and analyzed bottlenecks.</li>
+                </ul>
+            </div>
+
+        </section>
+    </div>
+</div>
+</body>
+</html>
