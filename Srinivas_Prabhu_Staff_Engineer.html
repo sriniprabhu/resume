@@ -9,6 +9,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap"
           rel="stylesheet"/>
 
+    <!--
+      Analytics — page-view tracking for when this is hosted at a URL (e.g. your own domain).
+      Replace G-XXXXXXXXXX with your real GA4 Measurement ID (analytics.google.com).
+      Prefer a cookie-less alternative instead? Swap this block for Plausible:
+        <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
+      Note: this only fires when the page is loaded over http(s) from a server: opening the
+      raw .html file locally (file://) or as an email attachment will not report any views.
+    -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <style>
         :root {
             --side: #111827;
@@ -287,6 +303,63 @@
 
         ul.b li strong { color: var(--text); font-weight: 700; }
 
+        /* ══════════════════════════════════════════
+           RESPONSIVE — tablet: narrow the sidebar
+        ══════════════════════════════════════════ */
+        @media screen and (max-width: 900px) {
+            :root { --side-w: 220px; }
+            .main { padding: 1.8rem 1.6rem; }
+        }
+
+        /* ══════════════════════════════════════════
+           RESPONSIVE — mobile: stack sidebar above main
+        ══════════════════════════════════════════ */
+        @media screen and (max-width: 680px) {
+            body { padding: 0; }
+
+            .page {
+                flex-direction: column;
+                max-width: 100%;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .side {
+                width: 100%;
+                padding: 1.6rem 1.3rem;
+            }
+
+            .avatar { width: 52px; height: 52px; font-size: 18px; margin-bottom: 10px; }
+            .s-name { font-size: 20px; }
+
+            .s-block { margin-bottom: 16px; }
+
+            /* Contact reads better as wrapping rows than a tall stack on mobile */
+            .s-contact {
+                display: flex;
+                flex-wrap: wrap;
+                column-gap: 16px;
+                row-gap: 6px;
+            }
+            .s-contact .s-label { flex-basis: 100%; }
+            .s-contact .s-ci { margin-bottom: 0; }
+
+            .main { padding: 1.5rem 1.2rem; }
+
+            .job-hdr { flex-direction: column; align-items: flex-start; gap: 2px; }
+            .role-line { row-gap: 4px; }
+
+            .co { font-size: 16px; }
+            ul.b li, .summary, .job > p { font-size: 13px; }
+        }
+
+        /* Extra-small phones */
+        @media screen and (max-width: 380px) {
+            .side { padding: 1.3rem 1rem; }
+            .main { padding: 1.3rem 0.9rem; }
+            .s-pill { font-size: 9.5px; padding: 2px 7px; }
+        }
+
         @media print {
             body { background: #fff; padding: 0; }
             .page { max-width: 100%; box-shadow: none; border-radius: 0; }
@@ -312,7 +385,7 @@
         <p class="s-title">Engineering Lead &amp; Manager</p>
         <span class="s-exp">15+ Years Experience</span>
 
-        <div class="s-block">
+        <div class="s-block s-contact">
             <p class="s-label">Contact</p>
             <div class="s-ci">
                 <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
