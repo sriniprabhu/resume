@@ -1,0 +1,15 @@
+node_modules/**/*
+node_modules/
+.env
+**/.eslintcache
+.eslintcache
+**/.DS_Store
+.DS_Store
+
+# IDE - IntelliJ
+**/*.iml
+
+# Terraform
+**/.terraform*
+
+.idea/
